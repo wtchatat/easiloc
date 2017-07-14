@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Road:</strong>
+  <%= @road_building.road_id %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @road_building.building_id %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @road_building.position %>
+</p>
+
+<%= link_to 'Edit', edit_road_building_path(@road_building) %> |
+<%= link_to 'Back', road_buildings_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visible: 1
+  tstamp: 2016-03-12
+  rid: 1
+
+two:
+  visible: 1
+  tstamp: 2016-03-12
+  rid: 1

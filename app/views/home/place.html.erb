@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+  console.log( JSON.parse('<%=raw @auth.to_json %>'))
+
+</script>
+
+<div class="row principal">
+   <div class="navtools col-md-2" ng-controller ="NavListCtrl">
+       <%= render("partials/left") %>
+   </div>
+  <div class="navmain col-md-10">
+    <div id="map" width="" height=""></div>
+  </div>
+
+</div>

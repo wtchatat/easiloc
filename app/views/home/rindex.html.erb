@@ -1,0 +1,38 @@
+<div class="row principal">
+   <div class="navtools col-md-2">
+       <a class="btn btn-default btn-login" style="margin:10px 10px 10px 35px"> Localiser un endroit</a>
+       <ul class="list-navleft">
+         <li><a  role="button" data-toggle="collapse" href="#/localisations" aria-expanded="false" aria-controls="localisation-panel">Localisations</a>
+            <ul id="localisation-panel" class="collapse">
+                <li>Residence(s) 1/2</li>
+                <li>Bureau 0/1</li>
+                <li></li>
+                <li> Favoris(89) </li>
+            </ul>
+         </li>
+         <li><a   role="button" data-toggle="collapse" href="#/routes" aria-expanded="false" aria-controls="routePanel>Routes">Routes</a>
+            <ul class="collapse" id="routePanel">
+                <li>Recherche un itineraire</li>
+                <li>Favoris(10)</li>
+            </ul>
+         </li>
+         <li><a role="button" data-toggle="collapse" href="#appPanel" aria-expanded="false" aria-controls="appPanel" >Applications</a>
+            <ul class="collapse" id="appPanel">
+                <li>Pres de vous</li>
+            </ul>
+         </li>
+         <li><a role="button" data-toggle="collapse" href="#amisPanel" aria-expanded="false" aria-controls="amisPanel" >Amis(89)</a>
+            <ul class="collapse" id="amisPanel">
+                <li>Importer vos amis</li>
+                <li></li>
+                <li><%= image_tag("profil.jpeg" , :size => "30x30" , :class => "img-profil img-circle") %>Stephane Mbia - </li>
+                <li>Marius Tresor + </li>
+            </ul>
+         </li>
+       </ul>
+   </div>
+  <div class="navmain col-md-10">
+     <div id="map"></div>
+  </div>
+
+</div>

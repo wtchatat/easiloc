@@ -1,0 +1,27 @@
+<div class="partage_localisation">
+
+     <div class="modal-header">
+                <div class="row">
+                <div class="col-xs-10">
+
+                     <div class=""> <span class="modal-titre"> Partager cet itineraire</span> </div>
+                </div>
+                <div class="col-xs-2 modal-btn-right">
+                   <!--<a class="modal-btn" ng-click="reduire()"> - </a> -->
+                    <!--<a class="modal-btn" ng-click="elargir()"> + </a> -->
+                   <a class="modal-btn" ng-click="close_partage_route()"><i class="fa fa-close"></i></a>
+                </div>
+                </div>
+             </div>
+             <div class="modal-body">
+                <div class=""> Partager cet itineraire en copiant le lien cidessous et en les envonyang a vos contacts</div>
+               <div class="well">
+                 <input ng-model="share_link"  />
+                <button clipboard supported="supported" text="share_link" on-copied="success()" on-error="fail(err)"class="btn btn-success"> copier</button>
+                 <br/>
+                 <span class="alert alert-sucess">{{success_message}}</span><br/>
+                 <span class="alert alert-error">{{error_message}}</span>
+               </div>
+              </div>
+
+</div>

@@ -1,0 +1,29 @@
+<h1>Listing road_buildings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Road</th>
+      <th>Building</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @road_buildings.each do |road_building| %>
+      <tr>
+        <td><%= road_building.road_id %></td>
+        <td><%= road_building.building_id %></td>
+        <td><%= road_building.position %></td>
+        <td><%= link_to 'Show', road_building %></td>
+        <td><%= link_to 'Edit', edit_road_building_path(road_building) %></td>
+        <td><%= link_to 'Destroy', road_building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Road building', new_road_building_path %>

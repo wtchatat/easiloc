@@ -1,0 +1,29 @@
+
+<div class="image_slide">
+  <div class="image_principale" ng-mouseenter="on_image()"  ng-mouseleave="off_image()">
+         <div class="nb_annonce_image">{{imsl_actual_images.length}}</div>
+         <div class="content_image_principale">
+             <img src={{imsl_active_image.src}} />
+         </div>
+         <div class="clearer"></div>
+      <div class="content_narrow" ng-show="on_mouse_over">
+      <a ng-click="imsl_prev()"><i class="fa fa-arrow-circle-o-left"></i> </a>
+      <span>{{ imsl_actual_position + 1}} / {{ imsl_actual_images.length}}</span>
+      <a ng-click="imsl_next()"><i class="fa fa-arrow-circle-o-right"></i></a>
+      </div>
+  </div>
+   <div ng-show="modal_active">
+    <div class="imsl_active">
+      <img src="{{ imsl_active_image.src}}" alt="{{imsl_active_image.src}}" />
+      <div class="imsl_active_title">{{imsl_active_image.alt }}</div>
+    </div>
+    <ul>
+      <li ng-repeat="image in imsl_actual_images track by $index">
+        <img src="{{image.src}}" ng-class="imsl_actual_position == $index ? active : '' " />
+      </li>
+    <ul>
+    <div class="">{{ imsl_actual_position}} / {{ imsl_actual_images.length}}</div>
+    <div class=""><a ng-click="imsl_prev()">prev</a></div>
+    <div class=""><a ng-click="imsl_next()">next</a></div>
+</div>
+</div>

@@ -1,0 +1,34 @@
+
+<div class="col-xs-3 infos">
+  <div class="routes_search">
+    <b> Trouver votre chemin</b>
+  <div class="form-group">
+    <label>selectionner une adresse de depart  </label>
+    <input type="text" class="admin_value" ng-change= "onChange()" ng-model="depart" placeholder="Depart..."
+     uib-typeahead="location as location.address for location in locations | filter:{address:$viewValue} | limitTo:8 "
+     typeahead-template-url="/app/templates/match_geocode.html"
+
+     >
+  </div>
+  <div class="form-group">
+    <label>selectionner une adresse d arrivee </label>
+    <input type="text" class="admin_value" ng-model="arrive" placeholder="Arrivee..."
+     uib-typeahead="location as location.address for location in locations | filter:{address:$viewValue} | limitTo:8 "
+     typeahead-template-url="/app/templates/match_geocode.html"
+     >
+  </div>
+  <button class="btn btn-default btn-route" ng-click="search()"> chercher </button>
+
+  </div>
+  <div class="results recherche" id="routing_results">
+       Resultats
+  </div>
+  <div class="routes-tools" >
+      <a class="btn btn-default "> + favoris</a>
+      <a class="btn btn-default" ng-click="partager(link)">=Partage</a></div>
+</div>
+
+<div class="col-xs-9">
+
+<leaflet lf-center="center"  height="550px" width="100%"></leaflet>
+</div>

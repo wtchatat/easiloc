@@ -1,0 +1,35 @@
+<div class="item_localisation">
+
+     <div class="modal-header">
+                <div class="row">
+                <div class="col-xs-12">
+                <div class="" style="text-align:center"><a  style="float:left" ng-click="menu_open()" class=""><i class="fa fa-bars"></i></a> <span class="modal-titre"> Plan de localisation </span><a style="float:right" ng-click="route_close()" class=""><i class="fa fa-close"></i></a></div>
+                </div>
+                <div class="clear"></div>
+                </div>
+      </div>
+      <div class="modal-body" style="padding:0">
+    <div class="route_profil">
+            <div class="col-xs-9" style="margin:10px;padding:10px">
+                <div class="" style="margin-bottom:10px" > Choisir le rayon à partir duquel vous presentez votre plan  </div>
+                <select ng-model = "distance"  class="form-control" style="width:25%">
+                  <option> 1km</option>
+                    <option>5km</option>
+                    <option> 10km </option>
+                  </select>
+                <select ng-model = "distance"  class="form-control" style="width:25%">
+                  <option> 1km</option>
+                    <option>5km</option>
+                    <option> 10km </option>
+                  </select>
+            </div>
+            <div class="col-xs-3 profil_tools" style="height: 25px;width:25px;border-radius: 50%;margin-top: 35px;padding-top: 2px;">
+                  <a href="#" ng-click="direction_change()" style="color:#ffef27;"><i class="fa fa-print"></i></a>
+            </div>
+          </div>
+           <div class="clear"></div>
+            <div class="col-xs-12">
+              <leaflet height="450px" width="100%"></leaflet>
+            </div>
+         </div>
+     </div>

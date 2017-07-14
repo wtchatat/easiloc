@@ -1,0 +1,35 @@
+<div class="navtools">
+    <h4 class="menu_title"> MES ADDRESSES <button ng-click="close_addresse_cree()" class="pull-right"><i class="fa fa-close"></i> </button></h4>
+     <div class="sub_filter">
+           <div ng-repeat="filter in filter_location track by $index" ng-class="what_filter_location($index)" class="filter_location" ng-click="set_filter_to_user_locations($index)"> {{filter.type}}</div>
+     </div>
+     <div class="clear"></div>
+     <div class="sub_filter_name" > {{ active_filter_location.name}}</div>
+          <div style="text-align:center" ng-show="user_locations == undefined">
+
+            <i class="fa fa-spin fa-spinner" style="font-size:24px"></i>
+
+          </div>
+
+          <div ng-show="user_locations != undefined" >
+           <div id="locations">
+               <div  class="location_item" ng-repeat="location in user_locations track by $index" ng-click="location_position($index)">
+                  <div class="location_name">{{($index +1)}}. {{ location.name }}</div>
+
+                  <div class="location_address ">
+                  <p  ng-bind-html = "location.address"><p>
+                  <div class="location_auteur">
+                    <p class="location_description">{{location.description}}</p>
+
+                    <img src="assets/profil.jpeg" width="50px" alt="illustration" />
+                     <span> William Tchatat - il y a 2 jours</span><br/>
+                   </div>
+                  </div>
+
+                  <div class="location_image"> <img src="assets/tv.jpg" alt="illustration" /> <span class="badge">{{ ($index + 5)}}</span> </div>
+                  <div class="clear"></div>
+                  <div class=" tools_location"></div>
+                </div>
+            </div>
+          </div>
+</div>

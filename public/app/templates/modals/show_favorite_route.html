@@ -1,0 +1,7 @@
+<div class="navtools">
+    <h4 class="menu_title">VOS ITINERAIRE FAVORIS  <button ng-click="close_menu()" class="pull-right"><i class="fa fa-close"></i> </button></h4>
+    <ul ng-repeat="route in favorite_routes track by route.id" class="present_favoris">
+      <li ><a ng-href="#/localisations/share?wp={{route.url}}"> {{ route.id}}</a>
+      </li>
+    </ul>
+</div>

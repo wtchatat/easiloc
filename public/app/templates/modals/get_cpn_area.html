@@ -1,0 +1,49 @@
+<div class="item_create_location"  ng-init="cpn_init()">
+
+     <div class="modal-header">
+                <div class="row">
+                  <div class="col-xs-12">
+                  <div class="" style="text-align:center"> <span class="modal-titre"> Recuperer le code postal numerique  </span><a href="#/applications/around" style="float:right" ng-click="close_third_part_annonce()" class=""><i class="fa fa-close"></i></a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+             </div>
+             <div class="modal-body">
+              <div class="titre_loc_create" style="padding: 0;margin-bottom: 10px;text-align: center;color: #56a0d2;font-size: 18px;border-bottom: dashed 1px;"> Quelques secondes pour recuperer le CPN(code postal numerique) de votre zone </div>
+               <div class="row">
+
+                  <div class="col-xs-4" class="ng-hide">
+
+                    <div class="container_choisir" ng-show=" etape_creation == 0 " >
+                     <h3 class="modal-sous-titre"> Selectionnez votre endroit </h3>
+                     <p class="addresse_info">
+                     Pour recuperer le code postale numerique de votre zone et facilement indiquez la zone pour vous faire livrez rapidement,
+                     <b>ne vous conseillons vivement plutôt la creation d'une adresse numerique virtuelle<a href="#/localisations/new?step='create'" ng-click="create_third_from_cpn()"> ici </a></b>
+
+                    <p>
+
+                      <div class="" ng-show="current_zone != undefined">
+                      votre zone est : <b>{{current_zone.cog}}-{{current_zone.cpn}}</b>
+                      </div>
+
+                    </div>
+
+
+                     </div>
+                     <div class="col-xs-8">
+                       <div class="" style="z-index:1;margin-bottom:10px">
+                         <button ng-click = ""   class="searchBtn_2"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+                            <ealo-search />
+                               </div>
+                       <div class="EL_map_container" style="height:250px">
+                      <leaflet lf-center="center" class="EL_Container"  height="100%" defaults="defaults"  width="100%"></leaflet>
+                      </div>
+                     </div>
+                   </div>
+                   <div class="localisation-tools" style="text-align:center">
+
+                     <a  ng-click="before_step_finish()" class="btn btn-default btn-success btn-xs">Terminer</a>
+                   </div>
+          </div>
+    </div>

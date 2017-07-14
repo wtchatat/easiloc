@@ -1,0 +1,56 @@
+
+<div class="item_localisation">
+
+     <div class="modal-header">
+                <div class="row">
+                <div class="col-xs-12">
+                <div class="" style="text-align:center"><a  style="float:left" ng-click="menu_open()" class=""><i class="fa fa-bars"></i></a> <span class="modal-titre"> Recherche un itineraire</span><a style="float:right" ng-click="route_close()" class=""><i class="fa fa-close"></i></a></div>
+                </div>
+                <div class="clear"></div>
+                </div>
+      </div>
+      <div class="modal-body" style="padding:0">
+         <div class="route_profil">
+            <div class="col-xs-1 profil_tools">
+               <a ng-click = "route_set_profil('bus')" uib-popover="en bus" popover-trigger="mouseenter" popover-placement="bottom"><i class="fa fa-bus"></i></a>
+               <a  ng-click = "route_set_profil('car')" class="active" uib-popover="en voiture" popover-trigger="click" popover-placement="right-top"><i class="fa fa-car"></i></a>
+               <a  ng-click = "route_set_profil('foot')" uib-popover="à pieds" popover-trigger="mouseenter" popover-placement="bottom"><i class="fa fa-male"></i></a>
+               <a  ng-click = "route_set_profil('taxi')" uib-popover="en taxi" popover-trigger="mouseenter" popover-placement="bottom"><i class="fa fa-taxi"></i></a>
+
+            </div>
+            <div class="col-xs-9" style="margin:0;padding:0">
+                <div class="contains_depart">
+                <div class="col-xs-1" style="margin:0;padding:0;margin-top:15px;text-align:center"><span span style="font-size:10px"><i class="fa fa-dot-circle-o"></i></span> </div>
+                <div class="col-xs-11" style="margin:0;padding:0;margin-top:15px">
+                <input type="text" class="admin_value" ng-change= "onChange()" ng-model="depart" placeholder="Depart..."
+               uib-typeahead="location as location.address for location in locations | filter:{address:$viewValue} | limitTo:8 "
+               typeahead-template-url="/app/templates/match_geocode.html"
+               >
+                </div>
+                </div>
+                <div class="container_espace clear" style="margin:0;padding:0;height: 25px;margin-left: 4.09%;border-left: dotted"></div>
+                <div class="contains_arrive clear">
+                <div class="col-xs-1" style="margin:0;padding:0;text-align:center"><span style="font-size:10px"><i class="fa fa-map-marker"></i></span> </div>
+                <div class="col-xs-11" style="margin:0;padding:0">
+                <input type="text" class="admin_value" ng-change= "onChange()" ng-model="arrive" placeholder="Arrive..."
+               uib-typeahead="location as location.address for location in locations | filter:{address:$viewValue} | limitTo:8 "
+               typeahead-template-url="/app/templates/match_geocode.html"
+               >
+                </div>
+                </div>
+            </div>
+            <div class="col-xs-1 profil_tools" style="height: 25px;width:25px;border-radius: 50%;margin-top: 35px;padding-top: 2px;">
+                  <a href="#" ng-click="direction_change()" style="color:#ffef27;"><i class="fa fa-exchange"></i></a>
+            </div>
+          </div>
+           <div class="clear"></div>
+            <div class="col-xs-12">
+              <div class="results recherche" id="routing_results">
+              </div>
+              <div class="routes-tools" >
+                  <a class="btn btn-default " ng-click="route_search()"> + favoris</a>
+                  <a class="btn btn-default" ng-click="partager(link)">=Partage</a>
+                </div>
+            </div>
+         </div>
+     </div>

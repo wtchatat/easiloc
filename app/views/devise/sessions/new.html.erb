@@ -1,0 +1,46 @@
+<div class="signin-main-container">
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+<div class="signin-container">
+<h3 class="login-title">
+  Connexion<br/>
+  <span class="inscription">
+     Vous n'avez pas de compte ?   <%= link_to "S incrire", new_registration_path(resource_name) , :class => "lien-inscription" %>
+  </span>
+</h3>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name) , :html => {:multipart => true}) do |f| %>
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true , :class =>"form-control" , :placeholder => "email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off" , :class => "form-control" , :placeholder => "Mot de passe" %>
+    <%= link_to "Oublié ?", new_password_path(resource_name) , :class => "forget_password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :memoriser_mes_identifiants , :class => "remember_label"  %>
+    </div>
+  <% end -%>
+  <div class="actions">
+    <%= f.submit "Connexion" , :class => "btn btn-block btn-default btn-login" %>
+  </div>
+<% end %>
+ <div class="separation">
+    <div class="line"></div>
+    <div class="text">ou</div>
+ </div>
+<%= link_to "Connexion avec Facebook", omniauth_authorize_path(resource_name, "facebook") , {:class =>"btn btn-default btn-primary btn-block"} %>
+<%= link_to "Connexion avec Google+", omniauth_authorize_path(resource_name, "googleplus") , {:class =>"btn btn-default btn-primary btn-block"} %>
+
+<p class="help-block">Aucune donnée n'est publiée sur Facebook sans votre autorisation</p>
+</div>
+</div>
+<div class="col-md-4"></div>
+
+</div>
+</div>

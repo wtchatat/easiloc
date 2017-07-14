@@ -1,0 +1,20 @@
+<div  ng-init="contact_name_modifier_init()">
+    <div class=annonce_close_btn><span class="pull-right" ng-click="close_contact_name_modifier()"><a><i class="fa fa-close"></i></a></span></div>
+    <div class="contact_container">
+    <div class="container_title_contact">
+    <h2 class="title_contact"> Modifier ce contact</h2>
+  </div>
+  <div class="form-group">
+    <label for="titre">Name</label>
+    <input type="text" class="form-control"  ng-model="active_contact.name" placeholder="name">
+  </div>
+  <label for="titre">Email</label>
+  <input type="email" class="form-control"  ng-model="active_contact.email" ng-disabled="disable_email">
+</div>
+<label for="titre">Telephone</label>
+<input type="email" class="form-control"  ng-model="active_contact.telephone" >
+ <a href="#/users/settings" ng-click="contact_modifier_valider()">
+   <span ng-show="disable_email">modifier</span>
+   <span ng-show="!disable_email">creer</span>
+ </a>
+</div>

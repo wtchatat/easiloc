@@ -1,0 +1,37 @@
+<div class="partage_localisation">
+     <div class="modal-header-partage">
+                <div class="row">
+                <div class="col-xs-7">
+
+                      <span class="modal-titre-petit"> Partager cette addresse  avec vos connaissances</span>
+                </div>
+                  <div class="col-xs-5">
+                     <input ng-model="share_link" type="hidden"/>
+                   <a clipboard supported="supported" text="share_link" uib-popover="copier le lien et activer le partage" popover-trigger="mouseenter" popover-placement="bottom" on-copied="success()" on-error="fail(err)"> <i class="fa fa-link" aria-hidden="true"></i> copier le lien</a>
+                 </div>
+
+</div>
+<div>
+   <div class="partage_body">
+     <span class="partage_titre"> Utilisateurs/personnes </span><br/>
+     <input type="text" ng-model ="location_user.email" placeholder="email"></input>
+     <input type="text" ng-model="location_user.name" placeholder="Nom et Prenom"></input>
+     <a class="partage_add" ng-click="add_guest_location()" > <i popover-trigger="mouseenter" popover-placement="bottom" uib-popover="ajouter un utilisateur pour paratger" class="fa fa-plus-circle"></i></a>
+       <ul class="partage_list" ng-repeat="guest in guest_location track by $index">
+         <li>email:{{guest.email}} - nom:{{guest.name}} <a ng-click="remove_guest_location($index)" > <i popover-trigger="mouseenter" popover-placement="bottom" uib-popover="enlever cet utilisateur"class="fa fa-close"></i></a></li>
+       </ul>
+    <!--    <div>
+        <textarea class="partage_text" name="textarea" rows="5" cols="30">
+    Cher Ami,
+    je t invite à consulter cette adresse: <a href="{{share_link}}"> ici </a>
+</textarea>
+       </div>
+     -->
+   </div>
+   <div class="partage_button"><a ng-click="save_guest_location()"  class="btn btn-primary btn-xs">
+   <i  class="fa fa-share"></i>
+   <span> partager</span>
+   </a></div>
+ </div>
+</div>
+</div>

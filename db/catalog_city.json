@@ -1,0 +1,47 @@
+[
+  {
+    "name": "region",
+    "parent": ["boundary"],
+    "tags": {"admin_level":"4"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 1
+  },
+    {
+    "name": "departement",
+    "parent": ["boundary"],
+    "tags": {"admin_level":"6"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 2
+  },
+    {
+    "name": "arrondissement",
+    "parent": ["boundary"],
+    "tags": {"admin_level":"7"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 3
+  },
+    {
+    "name": "commune",
+    "parent": ["boundary"],
+    "tags": {"admin_level":"8"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 4
+  },
+    {
+    "name": "quartier",
+    "parent": ["boundary"],
+    "tags": {"admin_level":"10"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 5
+  }
+  ]

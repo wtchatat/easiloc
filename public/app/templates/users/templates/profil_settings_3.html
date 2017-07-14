@@ -1,0 +1,59 @@
+<div>
+  <h2 class="user_title" style="text-align:center"> <div class="rounded"><i class="fa fa-check"></i></div> Controlez et sécurisez et modifier votre  compte</h2>
+  <div class="user_container">
+
+    <div class="container_information">
+    <h2 class="title_annonce" style="text-align:center"> Vos informations </h2>
+    <div class="row">
+      <div class="col-xs-6">
+  <div class="settings_annonce">
+  La gestion d'informations générales, telles que votre nom, votre adresse e-mail et votre numéro de téléphone,
+  suit notre politique de confidentialité. Neanmoins, il est important de renseigner la case reserve au numero de telephone pour
+  accentuer la protection de votre compte.
+  </div>
+  <div class="container_avatar">
+   <div class="circle_avatar"><span><i class="fa fa-user-o"></i></span><div class="load_avatar"><i class="fa fa-cloud-download"></i><input type="file" id="user_circle_image" name="user_circle_image"></div></div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+    <div class="form-group">
+      <label for="titre">Nom</label>
+        <input type="text" class="form-control" ng-model = "user.nom" placeholder="Un pseudo">
+      </div>
+      <div class="form-group">
+    <label for="titre">Email</label>
+      <input type="email" class="form-control" ng-model = "user.email" placeholder="email">
+    </div>
+    <div class="form-group">
+    <label for="titre">Telephone</label>
+    <input type="text" class="form-control" ng-model = "user.telephone" placeholder="+237 --- --- ---">
+    </div>
+    <div class="addresse_info">
+    <div class="checkbox">
+    <label for="type_type">
+      <input type="checkbox" name="type"  ng-model="user.confidence"  value="1" checked>
+           masquer le numero
+     </label>
+    </div>
+    <div class="checkbox">
+    <label for="type_type">
+      <input type="checkbox" name="type"  ng-model="user.confidence"  value="1" checked>
+           Ne pas partager mon numero avec des partenanires.
+     </label>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="titre">Password</label>
+    <input type="password" class="form-control" ng-model = "user.password" >
+    </div>
+    <div class="form-group">
+    <label for="titre">Confirmation Password</label>
+    <input type="password" class="form-control" ng-model = "user.conf_password" >
+    </div>
+    <div class="">
+      <a href="" class="btn btn-default btn-xs btn-primary">valider</a>
+    </div>
+    </div>
+  </div>
+</div>
+</div>

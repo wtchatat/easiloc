@@ -1,0 +1,28 @@
+<div class="item_localisation">
+
+     <div class="modal-header">
+                <div class="row">
+                <div class="col-xs-10">
+
+                     <div class=""> <span class="modal-titre">Les lieux à proximité de la zone selectionnée</div>
+                </div>
+                <div class="col-xs-2 modal-btn-right">
+                   <!--<a class="modal-btn" ng-click="reduire()"> - </a> -->
+                    <!--<a class="modal-btn" ng-click="elargir()"> + </a> -->
+                   <a class="modal-btn" ng-click="fermer()"> x </a>
+                </div>
+                </div>
+             </div>
+             <div class="modal-body">
+
+               <div class="row">
+                                  <div class="col-xs-6" ng-show ="show_associer" class="ng-hide">
+                           <leaflet  lf-center="center" height="250px" width="100%"></leaflet>
+                              </div>
+                              <div class="col-xs-6">
+                                <span class="info-success info"> {{message}}</span>
+                              </div>
+                   </div>
+          </div>
+    </div>
+</div>

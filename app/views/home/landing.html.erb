@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>easiloc , Donnez une adresse à votre maison !</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body ng-app="landing">
+  <div class="row nHeader container-fluid">
+    <div class="container">
+  <div class="nCol col-md-2">
+     <div class="logo"><%= image_tag("easiloc.png" , :width => 100 ) %> </div>
+  </div>
+  <div class="nCol col-md-10">
+  </div>
+</div>
+</div>
+
+<!--- MAIN CONTENT -->
+<div class="ld_bg">
+<div class="ld_content">
+<div class="container">
+<div class="ld_slogan">
+     <div class="ld_slogan_small">Rejoignez-nous</div>
+     <div class="ld_slogan_big"> Donnez une adresse à votre maison.</div>
+ </div>
+</div>
+<div class="container">
+  <div class="col-xs-6">
+    <div class="ld_content_video">
+      <!-- DEBU VIDEO -->
+      <div ng-controller="HomeCtrl as controller" class="videogular-container">
+<videogular vg-theme="controller.config.theme.url">
+   <vg-media vg-src="controller.config.sources"
+             vg-tracks="controller.config.tracks" vg-preload="controller.config.preload">
+   </vg-media>
+
+   <vg-controls vg-autohide="controller.config.plugins.controls.autoHide" vg-autohide-time="controller.config.plugins.controls.autoHideTime">
+       <vg-play-pause-button></vg-play-pause-button>
+           <vg-scrub-bar>
+           <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+       </vg-scrub-bar>
+       <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+       <vg-volume>
+           <vg-mute-button></vg-mute-button>
+           <vg-volume-bar></vg-volume-bar>
+       </vg-volume>
+       <vg-fullscreen-button></vg-fullscreen-button>
+       <my-stop-button></my-stop-button>
+ <div class='my-button iconButton'><a href='http://www.videogular.com' target='_blank'>LOGO</a></div>
+   </vg-controls>
+</videogular>
+</div>
+<!-- FIN VIDEO -->
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <p class="ld_lancement"> Nous lançons la bêta privée le 1 Août 2017</p>
+     <p class="ld_message"> <b>easiloc</b> est une application qui vous permet de créer une adresse pour votre maison et de la partager avec vos connaisances.
+      envoyez votre nom et email, pour être parmi les 500 premiers à utiliser la bêta privée.</p>
+
+     <div class="ld_form">
+      <ealo-subscription />
+    </div>
+    <div class="ld_card">
+      <div class="ld_card_title">Déjà <b>200</b> vip , soyez parmi ! </div>
+        <div class="ld_indice" style="float:left">0</div>
+        <div class="ld_indice" style="float:right">500</div>
+        <div class="clear"></div>
+      <div class="progress">
+        <span class="ld_btn_position"></span>
+  <div class="progress-bar progress-bar-elao-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span class="sr-only">40% Complete (success) me</span>
+
+  </div>
+  </div>
+   <div class="ld_card_date"><i class="fa fa-calendar-check-o"></i> 1<sup>er</sup> Août 2017 </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!--  FOOTER -->
+<div class="ld_footer">
+ <div class="container">
+
+    <ul class="ld_nav">
+      <li> Blog</li>
+     <li><i class="fa fa-facebook-official" aria-hidden="true"></i> </li>
+     <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+      <li> Contacts</li>
+    </ul>
+ </div>
+</div>
+
+</body>
+</html>

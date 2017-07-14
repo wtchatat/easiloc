@@ -1,0 +1,15 @@
+<div class="container_cropping">
+  <div class=annonce_close_btn><span class="pull-right" ng-click="close_crop_image_annonce()"><a><i class="fa fa-close"></i></a></span></div>
+
+  <div class="title_crop">Ajuster votre image</div>
+ <div style="margin:5px ; width:calc(50% - 10px); text-align:center;float:left">
+   <img  style="border:dashed 1px #eee;background:#000" ng-src="{{activeCroppedImage}}" /></div>
+ </div>
+ <div class="" style="width:200px;margin: 40px;overflow:hidden;float:left">
+                               <img-crop image="activeImage"  class="cropArea" result-image="activeCroppedImage"></img-crop>
+ </div>
+ <div class="clear"></div>
+ <div class="btn_crop">
+ <a ng-click="on_crop_validate()" class="btn btn-default btn-primary btn-xs"> valider 
+</a>
+</div>

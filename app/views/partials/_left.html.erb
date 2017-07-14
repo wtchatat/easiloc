@@ -1,0 +1,33 @@
+<a class="btn btn-default btn-login" style="margin:10px 10px 10px 35px"> Localiser un endroit</a>
+<uib-accordion close-others=true>
+   <uib-accordion-group heading="localisations"  is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled" >
+     <ul id="localisation-panel">
+          <li><a href="/#/localisations/new">Nouvelle Localisation</a></li>
+          <li><a href="/#/localisations/positionne">Positionner</a></li>
+         <li><a href="/#/localisations/residence">Residence(s) 1/2</a></li>
+         <li>Bureau 0/1</li>
+         <li></li>
+         <li> Favoris(89) </li>
+     </ul>
+</uib-accordion-group>
+<uib-accordion-group heading="routes">
+  <ul id="routePanel">
+      <li><a href="#/routes/recherche">Recherche un itineraire</a></li>
+      <li>Favoris(10)</li>
+  </ul>
+</uib-accordion-group>
+<uib-accordion-group heading="Applications" >
+   <ul  id="appPanel">
+        <li><a href="#/applications">Pres de vous</a></li>
+     </ul>
+ </uib-accordion-group>
+ <uib-accordion-group heading="amis" >
+   <ul id="amisPanel">
+     <li><a href="#/amis">Mes amis</a></li>
+    <li>Importer vos amis</li>
+    <li></li>
+    <li><%= image_tag("profil.jpeg" , :size => "30x30" , :class => "img-profil img-circle") %>Stephane Mbia - </li>
+    <li>Marius Tresor + </li>
+   </ul>
+ </uib-accordion-group>
+</uib-accordion>

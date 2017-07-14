@@ -1,0 +1,13 @@
+<script type="text/javascript">
+  if(window.opener){
+    window.opener.postMessage(JSON.parse('<%=raw @auth.to_json %>') , "http://localhost:3000")
+    window.close()
+  }
+
+</script>
+
+
+
+<div>
+<%= debug(@auth) %>
+</div>

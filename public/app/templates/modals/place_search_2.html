@@ -1,0 +1,6 @@
+<input type="text" class="admin_value" ng-model="depart.texte" placeholder="Depart..."
+uib-typeahead="location as location.texte for location in get_place($viewValue) | limitTo:4"
+typeahead-template-url="/app/templates/match_geocode.html"
+typeahead-select-on-exact = true
+typeahead-on-select ="onSelect($item, $model, $label, $event)"
+>

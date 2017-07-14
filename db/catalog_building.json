@@ -1,0 +1,9 @@
+ [{
+    "name": "building",
+    "parent": ["infrastructure"],
+    "tags": {"building": "**"},
+    "moretags": {},
+    "poi": true,
+    "type": ["way"],
+    "id": 1
+  }]

@@ -1,0 +1,133 @@
+<div class="item_create_location"  ng-init="third_part_init()">
+
+     <div class="modal-header">
+                <div class="row">
+                  <div class="col-xs-12">
+                  <div class="" style="text-align:center"> <span class="modal-titre"> Creer une addresse </span><a style="float:right" ng-click="close_third_part_annonce()" class=""><i class="fa fa-close"></i></a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+             </div>
+             <div class="modal-body">
+              <div class="titre_loc_create" style="padding: 0;margin-bottom: 10px;text-align: center;color: #56a0d2;font-size: 18px;border-bottom: dashed 1px;"> 3 étapes simples pour donner une adresse numérique à un lieu </div>
+               <div class="row">
+
+                  <div class="col-xs-6" class="ng-hide">
+                    <div class="row show_step" ng-show = "etape_creation < 3 ">
+                           <div class="col-xs-4 step" ng-class="step_active(0)"><span ng-class="step_checked(0)"> 1 <i ng-show=" etape_creation > 0 " class="fa fa-check"></i></span></div>
+                           <div class="col-xs-4 step" ng-class="step_active(1)"><span ng-class="step_checked(1)"> 2 <i ng-show=" etape_creation > 1 " class="fa fa-check"></i></span></div>
+                            <div class="col-xs-4 step" ng-class="step_active(2)"><span ng-class="step_checked(2)"> 3 <i ng-show=" etape_creation > 2 " class="fa fa-check"></i></span></div>
+                    </div>
+                    <div class="container_choisir" ng-show=" etape_creation == 0 " >
+                     <h3 class="modal-sous-titre"> Selectionnez votre endroit </h3>
+                     <p class="addresse_info">
+                     Pour creer une adresse numerique virtuelle vous permettant de
+                     facilement indiquez le chemin et vous faire livrez rapidement,
+                     <b>faites un clique droit sur la carte</b> correspondant au lieu que vous souhaitez
+                     fournir une adresse.
+                    <p>
+                      <div class="location_sitituation">
+                         <div class="location_init" ng-show="show_init_location_search()">
+                           <span>Patientez la localisation de l'endroit choisi:</span><br/><br/>
+                           <i class="fa fa-spin fa-spinner"></i>
+                          </div>
+                          <div class="location_init_info" ng-show="!disable_step()">
+                            <span>Votre endroit a ete localisé, cliquez sur <b>next</b> pour continuer</span><br/><br/>
+                            <i class="fa fa-check"></i>
+
+                              </div>
+                              <div class="location_init_noninfo" ng-show="not_founded_localisation">
+                                <span>Votre endroit n'a pas été localisé,selectionnez un nouvel endroit en vous rassurant qu il correspond à une habitation</span><br/><br/>
+                                <i class="fa fa-close"></i>
+
+                                  </div>
+                      </div>
+                    </div>
+                    <div class="container_local" ng-show=" etape_creation == 1 ">
+                       <h3 class="modal-sous-titre"> Decrivez votre localisation </h3>
+                    <form style="height:250px;overflow-y:auto" class="form">
+                      <input type="hidden" class="form-control " placeholder="lat" ng-model = "localisation.lat" >
+                      <input type="hidden" class="form-control " placeholder="lng" ng-model = "localisation.lng"  >
+                      <div class="form-group">
+                          <input type="text" class="form-control " placeholder="Nom" ng-model = "localisation.name" required>
+                           <p class="help-block">Inserez un nom, surtout si c'est un lieu public.</p>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control " placeholder="Numero mairie" ng-model = "localisation.mairie" required>
+                           <p class="help-block">Introduisez, s'il exite, le numero de la mairie inscrit sur votre portail.</p>
+                      </div>
+                    <div class="form-group">
+                      <label> Type d'adresse</label>
+                      <div class="checkbox">
+                      <label for="type_type">
+                        <input type="checkbox" name="type"  ng-model="localisation.type"  value="1" checked >
+                            Privée
+                       </label>
+                      </div>
+                      <div class="checkbox">
+                      <label for="type_type">
+                        <input type="checkbox" name="type"  ng-model="localisation.type"  value="0" >
+                            Publique.
+                       </label>
+                      </div>
+                    </div>
+                  </div>
+                        <div class="container_info" ng-show="etape_creation == 2">
+                        <h3 class=" modal-sous-titre"> Vos informations </h3>
+                        <div class="form-group">
+                          <label for="titre">Nom ou Pseudo*</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" ng-model = "user.pseudo" placeholder="Nom ou pseudo" reuired>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                        <label for="titre">Email*</label>
+                        <div class="input-group">
+                          <input type="email" class="form-control" ng-model = "user.email" placeholder="email" required>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="titre">Telephone*</label>
+                        <div class="input-group">
+                        <input type="text" class="form-control" ng-model = "user.phone" placeholder="+237 --- --- ---" required>
+                        </div>
+                        </div>
+                        <div class="addresse_info">
+                        <p> Vous recevrez un mail, que vous devriez validez dans les 48 heures, pour que cette adresse reste valable</p>
+                        </div>
+                        </div>
+                        <div class="location_end_process" ng-show="etape_creation == 3">
+                          <h3 class=" modal-sous-titre"> Merci pour votre confiance </h3>
+                          <p>l'adresse numerique associé à votre endroit est la suivante:<br/>
+                            <b ng-bind-html="current_addresse.location_address"></b>
+
+                          </p>
+                           <i class="fa fa-thumbs-o-up"></i>
+                        </div>
+
+                          </form>
+
+                     </div>
+                     <div class="col-xs-6">
+                       <div class="" style="z-index:1;margin-bottom:10px">
+                         <button ng-click = ""   class="searchBtn_2"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+                             <input type="text" class="input_value" style="width:200px" ng-model="selected" placeholder="selectionner votre zone"
+                            uib-typeahead="state for state in sub_regions | filter:$viewValue | limitTo:8 "
+                            typeahead-template-url="/app/templates/match.html"
+                            typeahead-on-select="onSelect($item, $model, $label)"
+                            >
+                               </div>
+                       <div class="EL_map_container" style="height:250px">
+                      <leaflet lf-center="center" class="EL_Container"  height="100%" defaults="defaults"  width="100%"></leaflet>
+                      </div>
+                     </div>
+                   </div>
+                   <div class="localisation-tools" style="text-align:center">
+                     <a ng-show="(etape_creation > 0) && (etape_creation < 3) " ng-click="step_prev()" class="btn btn-default btn-xs" > prev </a>
+                     <a ng-show="etape_creation < 3" ng-click="step_next()" class="btn btn-default btn-primary btn-xs" ng-disabled ="disable_step()"> next </a>
+                     <a ng-show="etape_creation == 3 " ng-click="before_step_finish()" class="btn btn-default btn-success btn-xs">Terminer</a>
+                   </div>
+          </div>
+    </div>
+</div>

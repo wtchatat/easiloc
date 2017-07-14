@@ -1,0 +1,17 @@
+
+<div class="image_slide">
+  <div class="" style="text-align:center"> <span class="modal-titre"> Image Slide </span><a href="#" style="float:right" ng-click="fermer()" class=""><i class="fa fa-close"></i></a></div>
+
+    <div class="imsl_active">
+      <img src="{{ imsl_modal_active_image.src}}" alt="{{imsl_active_image.src}}" />
+      <div class="imsl_modal_active_title">{{imsl_active_image.alt }}</div>
+    </div>
+    <ul>
+      <li ng-repeat="image in imsl_modal_actual_images track by $index">
+        <img src="{{image.src}}" ng-class="imsl_actual_position == $index ? active : '' " />
+      </li>
+    <ul>
+    <div class="">{{ imsl_actual_position}} / {{ imsl_actual_images.length}}</div>
+    <div class=""><a ng-click="imsl_modal_prev()">prev</a></div>
+    <div class=""><a ng-click="imsl_modal_next()">next</a></div>
+</div>

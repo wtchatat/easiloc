@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<% @annonce.attaches.each do |attach| %>
+  <img src="<%= attach.filename.url %>" />
+
+<% end %>
+
+<%= link_to 'Edit', edit_annonce_path(@annonce) %> |
+<%= link_to 'Back', annonces_path %>

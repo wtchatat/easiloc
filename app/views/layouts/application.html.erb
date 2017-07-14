@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>easiloc , Donnez une adresse à votre maison !</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <script src="https://apis.google.com/js/client.js"></script>
+  <%= javascript_include_tag 'application' %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="app">
+
+  <div class="row nHeader container-fluid">
+    <div class="nCol col-md-2">
+       <div class="logo"><%= image_tag("easiloc.png" , :width => 100 ) %> </div>
+    </div>
+      <div class="nCol col-md-10">
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+
+            <li >
+            <%= link_to('Logout', destroy_user_session_path , {:class =>"navlink"}) %>
+            </li>
+          <% else %>
+            <li >
+            <%= link_to('Login', new_user_session_path,{:class =>"navlink"})  %>
+            </li>
+          <% end %>
+          <% if user_signed_in? %>
+        <li class="dropdown profile_user">
+          <span uib-dropdown on-toggle="toggled(open)">
+
+        <a href id="simple-dropdown" uib-dropdown-toggle class="dropdown-toggle navlink active"><%= image_tag(current_user.get_user_image  , :size => "50x50" , :class => "img-profil img-circle") %></a>
+
+            </a>
+      <div class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
+
+        <div class="content_user_infos">
+          <div class="bg_user_image">
+            <b><%= current_user.name %> </b><br/>
+            <%= current_user.get_user_mail %><br/>
+
+          </div>
+          <%= image_tag(current_user.get_user_image  , :size => "80x80" , :class => "img-profil img-circle") %></a>
+         <br/><br/>
+        <a href="/#/users/settings" class="btn btn-xs btn-primary"> Mon compte</a>
+        </div>
+
+        <div class="content_short_user_infos">
+         <div class="short_user_infos col-xs-4"><a><span>439</span></a><br/>Adresses Suivis</div>
+         <div class="short_user_infos col-xs-4"><a><i class="fa fa-carte"></i><span>98</span></a><br/> Itineraires Suivis</div>
+         <div class="short_user_infos col-xs-4"><a><i class="fa fa-friends"></i><span>9k</span></a><br/> Amis</div>
+       </div>
+
+
+     <div class="user_notifications">
+          <div class="content_user_notifications">
+
+          </div>
+     </div>
+      </div>
+    </span>
+          </li>
+          <% end %>
+      </ul>
+      </div>
+  </div>
+<div class="notice alert alert-warning"><%=notice %></div>
+<!--<div class="notice alert alert-danger"><%=alert %></div> -->
+
+<%= yield %>
+
+<script>
+  setTimeout("$('.notice').fadeOut('slow')", 5000)
+  setTimeout("$('.alert').fadeOut('slow')", 5000)
+</script>
+</body>
+</html>

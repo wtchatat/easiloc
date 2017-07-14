@@ -1,0 +1,38 @@
+<div class="partage_localisation">
+     <div class="modal-header-partage">
+                <div class="row">
+                <div class="col-xs-12">
+
+                      <span class="modal-titre-petit" style="text-align:center; display:block">Encore uen etape pour finaliser la creation de cette nouvelle addresse.</span>
+                </div>
+</div>
+<div>
+   <div class="partage_body partage_exist">
+     <span class="partage_titre partage_titre_exist"> Voulez-vous: </span><br/>
+     <div class="checkbox">
+       <label><input type="checkbox" checked></input> Associer votre compte à cette adresse et ...</label>
+ </div>
+    <div class="radio">
+       <label><input type="radio" name="type_addresse" checked/>Definir comme lieu de  domicile </label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="type_addresse"/> Definir comme lieu de travail </label>
+    </div>
+
+   <div class="checkbox">
+     <label><input type="checkbox"></input> Ne pas associer mon compte à cette addresse</label>
+    <p class="hel-block"  style="padding-left: 20px; font-size:10px;margin-top: -5px;"> Cochez cette case si vous n'etes liés à cette addresse <:p>
+</div>
+</div>
+
+   <div class="partage_button">
+     <a ng-click="enregistrer_after()()"  class="btn btn-primary btn-xs">
+            <i  class="fa fa-share"></i> <span> valider</span>
+   </a>
+   <a ng-click="close_partage_exist()"  class="btn btn-warning btn-xs">
+          <i  class="fa fa-close"></i> <span>annuler</span>
+ </a>
+ </div>
+ </div>
+</div>
+</div>

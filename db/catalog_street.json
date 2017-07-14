@@ -1,0 +1,227 @@
+[
+  {
+    "name": "motorway",
+    "parent": ["road"],
+    "tags": {"highway":"motorway"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 1
+  },
+  {
+    "name": "trunk",
+    "parent": ["road"],
+    "tags": {"highway":"trunk"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 2
+  },
+  {
+    "name": "primary",
+    "parent": ["road"],
+    "tags": {"highway":"primary"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 3
+  },
+  {
+    "name": "secondary",
+    "parent": ["road"],
+    "tags": {"highway":"secondary"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 4
+  },
+  {
+    "name": "tertiary",
+    "parent": ["road"],
+    "tags": {"highway":"tertiary"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 5
+  },
+  {
+    "name": "unclassified",
+    "parent": ["road"],
+    "tags": {"highway":"unclassified"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 6
+  },
+  {
+    "name": "residential",
+    "parent": ["road"],
+    "tags": {"highway":"residential"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 7
+  },
+  {
+    "name": "service",
+    "parent": ["road"],
+    "tags": {"highway":"service"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 8
+  },
+  {
+    "name": "motorway_link",
+    "parent": ["road_link"],
+    "tags": {"highway":"motorway_link"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 10
+  },
+  {
+    "name": "trunk_link",
+    "parent": ["road_link"],
+    "tags": {"highway":"trunk_link"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 11
+  },
+  {
+    "name": "primary_link",
+    "parent": ["road_link"],
+    "tags": {"highway":"primary_link"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 12
+  },
+  {
+    "name": "secondary_link",
+    "parent": ["road_link"],
+    "tags": {"highway":"secondary_link"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 13
+  },
+  {
+    "name": "tertiary_link",
+    "parent": ["road_link"],
+    "tags": {"highway":"tertiary_link"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 14
+  },
+  {
+    "name": "living_street",
+    "parent": ["road_special"],
+    "tags": {"highway":"living_street"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 15
+  },
+  {
+    "name": "pedestrian",
+    "parent": ["road_special"],
+    "tags": {"highway":"pedestrian"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 16
+  },
+  {
+    "name": "track",
+    "parent": ["road_special"],
+    "tags": {"highway":"track"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 17
+  },
+  {
+    "name": "bus_guideway",
+    "parent": ["road_special"],
+    "tags": {"highway":"bus_guideway"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 18
+  },
+  {
+    "name": "raceway" ,
+    "parent": ["road_special"],
+    "tags": {"highway":"raceway"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 19
+  },
+  {
+    "name": "road",
+    "parent": ["road_special"],
+    "tags": {"highway":"road"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 20
+  },
+  {
+    "name": "footway",
+    "parent": ["road_path"],
+    "tags": {"highway":"footway"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 21
+  },
+  {
+    "name": "bridleway",
+    "parent": ["road_path"],
+    "tags": {"highway":"bridleway"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 22
+  },
+  {
+    "name": "steps",
+    "parent": ["road_path"],
+    "tags": {"highway":"steps"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 23
+  },
+  {
+    "name": "path",
+    "parent": ["road_path"],
+    "tags": {"highway":"path"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 24
+  },
+  {
+    "name": "cycle",
+    "parent": ["cycleway"],
+    "tags": {"highway":"cycleway"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 25
+  },
+  {
+    "name": "way_cycle",
+    "parent": ["cycleway"],
+    "tags": {"cycleway":"**"},
+    "moretags": {},
+    "poi": false,
+    "type": ["way"],
+    "id": 26
+  }
+  ]

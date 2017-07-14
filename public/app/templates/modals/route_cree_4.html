@@ -1,0 +1,31 @@
+<div class="navtools">
+    <h4 class="menu_title"> MES ITINERAIRES <button ng-click="close_route_cree()" class="pull-right"><i class="fa fa-close"></i> </button></h4>
+     <div class="sub_filter">
+           <div ng-repeat="filter in filter_route track by $index" ng-class="what_filter_route($index)" class="filter_location" ng-click="set_filter_to_user_routes($index)"> {{filter.type}}</div>
+     </div>
+     <div class="clear"></div>
+     <div class="sub_filter_name" > {{ active_filter_route.name}}</div>
+          <div style="text-align:center" ng-show="user_routes == undefined">
+
+            <i class="fa fa-spin fa-spinner" style="font-size:24px"></i>
+
+          </div>
+
+          <div ng-show="user_routes != undefined" >
+           <div id="locations">
+               <div  class="location_item" ng-repeat="route in user_routes track by $index"  >
+
+                  <div ng-if = " route.routes " ng-click="route_item_show($index)" >
+                    <div class="route_trajet">{{$index}}. {{route.routes[0].name}}</div>
+                    <div class="trajet"><b> Trajet de </b>: {{ route.routes[0].waypoints[0].name}} , {{route.routes[0].waypoints[1].name }}</div>
+                    <div class="distance_dure">{{routing_formatter.formatDistance(route.routes[0].summary.totalDistance)}} - {{ routing_formatter.formatTime(route.routes[0].summary.totalTime)}} </div>
+                     <div class="auteur">  <img src="assets/profil.jpeg" /> <span> william tchatat - 4 jours</span></div>
+                     <div class="partage_route_cree"><span class="nb_part">Partagés:<a href="#" > 4 </a></span></div>
+                   </div>
+
+                  <div class=" tools_location"></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+</div>

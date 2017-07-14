@@ -1,0 +1,14 @@
+<div class="main-location">
+   <div class="row">
+       <div class="col-xs-4">
+            <h4> Mes Adresses </h4>
+            <div class="" ng-repeat = "loc in currentUserLocations track by loc.id ">
+                <div class="col-xs-10" style="font-size:10px;cursor:pointer" class="loc_container" ng-click = "locPosition(loc.id)" ng-bind-html="loc.address"></div>
+                <div class="col-xs-2" ><span class="pull-right">{{ loc.nature}}</span></div>
+            </div>
+       </div>
+      <div class="col-xs-8">
+         <leaflet lf-center="locationCenter" height="400px" width="100%"></leaflet>
+      </div>
+   </div>
+ </div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rid: 1
+  level: 1
+  cog: MyString
+  tags: MyString
+  member_nodes: MyString
+  member_ways: MyString
+
+two:
+  rid: 1
+  level: 1
+  cog: MyString
+  tags: MyString
+  member_nodes: MyString
+  member_ways: MyString

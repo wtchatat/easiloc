@@ -1,0 +1,29 @@
+<div class="navtools">
+    <h4 class="menu_title"> MENU <button ng-click="close_menu()" class="pull-right"><i class="fa fa-close"></i> </button></h4>
+           <ul id="locationPanel">
+              <li><a href="#" ng-click="addresse_cree(0)"><i class="fa fa-address-book-o"></i>Addresses créées</a></li>
+              <li><a href="#" ng-click="addresse_cree(1)"><i class="fa fa-wpexplorer"></i>Addresses suivies </a></li>
+             <li><a href="#" ng-click="addresse_cree(2)"><i class="fa fa-star"></i>Addresses favoris</a></li>
+             <li><a href="#" ng-click="addresse_cree(3)"><i class="fa fa-share"></i>Addresses partagées</a></li>
+             <li role="separator" class="divider"></li>
+             <li><a href="#" ng-click="addresse_cree(4)"><i class="fa fa-home"></i> Addresses domiciles</a></li>
+             <li><a href="#" ng-click="addresse_cree(5)"><i class="fa fa-briefcase"></i> Addresses Bureaux</a></li>
+
+         </ul>
+      <ul id="routePanel">
+
+          <li><a ng-click="open_route()"  href="#"><i class="fa fa-map-signs"></i> Creer un itineraire</a></li>
+          <li><a href="#" ng-click="route_cree(0)" ><i class="fa fa-wpexplorer"></i>  Itineraires favoris (
+            <i style="padding:0" ng-if="favorite_routes == -1" class="fa fa-spinner fa-spin"></i>
+            <span  ng-if="favorite_routes != -1">{{favorite_routes.length}}</span>
+            )
+          </a></li>
+            <li><a ng-click="route_cree(1)"  href="#"><i class="fa fa-share"></i> Itineraires partagés</a></li>
+
+      </ul>
+        <div class="titre_application">Applications</div>
+       <ul  id="appPanel">
+            <li><a href="#/applications"><i class="fa fa-binoculars"></i>Pres de vous</a></li>
+         </ul>
+
+</div>

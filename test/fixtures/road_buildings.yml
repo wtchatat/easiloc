@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  road_id: 1
+  building_id: 1
+  position: 1
+
+two:
+  road_id: 1
+  building_id: 1
+  position: 1

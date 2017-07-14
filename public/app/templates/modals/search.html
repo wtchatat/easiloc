@@ -1,0 +1,5 @@
+<input type="text" class="input_value" width="300px" ng-model="selected" placeholder="selectionner votre zone"
+ uib-typeahead="state for state in sub_regions | filter:$viewValue | limitTo:8 "
+ typeahead-template-url="/app/templates/match.html"
+ typeahead-on-select="onSelect($item, $model, $label)"
+ >

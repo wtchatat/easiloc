@@ -1,0 +1,19 @@
+<div class="affine_place">
+<!--<div class="swap-btn" ng-click="admin()"><i class="glyphicon glyphicon-triangle-left"></i></div> -->
+<div class="admins_container">
+  <label for="states">Preciser votre zone</label>
+       <input type="text" class="admin_value" ng-model="selected" placeholder="Region,Dept,Arrt ou Quartier"
+        uib-typeahead="state for state in sub_regions | filter:$viewValue | limitTo:8 "
+        typeahead-template-url="/app/templates/match.html"
+        typeahead-on-select="onSelect($item, $model, $label)"
+        >
+</div>
+  <div class="affiner_btn">
+  <button type="button" ng-click="partager()" class="btn btn-default btn-circle change" ><i class="glyphicon glyphicon-screenshot"></i></button>
+</div>
+</div>
+
+
+
+
+<leaflet lf-center="center"  height="550px" width="100%"></leaflet>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mtype: MyString
+  ref: 1
+  role: MyString
+  rid: 1
+
+two:
+  mtype: MyString
+  ref: 1
+  role: MyString
+  rid: 1

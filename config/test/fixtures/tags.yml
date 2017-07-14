@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tkey: MyString
+  tvalue: MyString
+  type_name: MyString
+  type_id: 1
+
+two:
+  tkey: MyString
+  tvalue: MyString
+  type_name: MyString
+  type_id: 1

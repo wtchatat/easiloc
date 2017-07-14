@@ -1,0 +1,178 @@
+<div  ng-init="annonce_init()">
+    <div class=annonce_close_btn><span class="pull-right" ng-click="close_deposer_annonce()"><a><i class="fa fa-close"></i></a></span></div>
+    <div class="depot_annonce_container">
+    <div class="container_title_depot_annonce">
+    <h2 class="title_depot_annonce"> Deposez une annonce</h2>
+  </div>
+    <form>
+    <h2 class="title_annonce"> L'Annonce</h2>
+  <div class="container_annonce">
+  <div class="form-group">
+    <label for="categorie"> Categorie *</label>
+    <select type="" class="form-control" ng-model="annonce.categorie" placeholder="Email">
+        <option class="" ng-repeat="option in annonce_categorie track by $index" value="{{option.id}}">
+          {{option.name}}
+        </option>
+    </select>
+      <label for="social"> Etes-vous un ? *</label>
+      <div class="radio">
+      <label for="social_type">
+        <input type="radio" name="social"  ng-model="annonce.social"  value="1" checked>
+             Particulier
+       </label>
+       <label for="social_type">
+         <input type="radio" name="social"  ng-model="annonce.social"  value="0" />
+              Professionnel
+        </label>
+        </div>
+        <label for="type"> Type d'annonce *</label>
+        <div class="radio">
+        <label for="type_type">
+          <input type="radio" name="type"  ng-model="annonce.type"  value="1" checked>
+               Offre
+         </label>
+         <label for="social_type">
+           <input type="radio" name="type"  ng-model="annonce.type"  value="0" />
+                Demande
+          </label>
+          </div>
+          <div class="form-group">
+    <label for="titre">Donnez un titre à votre annonce</label>
+    <input type="text" class="form-control"  placeholder="Un titre illustratif">
+  </div>
+  <label for="etat"> Dans quel etat ? *</label>
+  <div class="radio">
+  <label for="etat_type">
+    <input type="radio" name="type"  ng-model="annonce.etat"  value="1" checked>
+         Neuf
+   </label>
+   <label for="etat_type">
+     <input type="radio" name="type"  ng-model="annonce.etat"  value="0" />
+        Vieux
+    </label>
+    <label for="social_type">
+      <input type="radio" name="type"  ng-model="annonce.etat"  value="2" />
+         Annonce non marchande
+     </label>
+
+    </div>
+    <div class="form-group">
+<label for="titre">Prix</label>
+<div class="input-group">
+      <input type="text" class="form-control" ng-model="annonce.prix" placeholder="Prix">
+      <div class="input-group-addon">CFA</div>
+    </div>
+</div>
+<div class="form-group">
+<label for="description">Descrivez votre annonce*</label>
+<textarea class="form-control" rows="3" ng-model="annonce.description"></textarea>
+  </div>
+</div>
+<div class="form-group">
+  <label>Ajoutez des photos</label>
+  <p class="help-block"> Les Annonces avec photos se consultent beaucoup plus</p>
+  <div class="container_image_annonce" ng-repeat="image in annonce_images track by $index">
+
+   <label>{{ image.label}} </label>
+   <i class="fa fa-photo"></i></a>
+     <input ng-click="handle_image_click($index)" type="file"id="file_{{$index}}_image"  name="file_{{$index}}_image" />
+   <img ng-show="myCroppedImage[{{$index}}]" style="height:100%;width:100%;top:0;left:0;position:absolute" ng-src="{{myCroppedImage[$index]}}" />
+   <div ng-show="myCroppedImage[{{$index}}]" style="font-size:12px; position:absolulte;right:-4px;top:-4px" class=annonce_close_btn><span  ng-click="close_cropped_in_annonce($index)"><a><i style="font-size:14px" class="fa fa-close"></i></a></span></div>
+
+ </div>
+
+</div>
+<div class="clear"></div>
+</div>
+<div class="container_localisation">
+ <h2 class="title_annonce"> Localisez votre annonce </h2>
+
+ <label for="addresse">addresse </label>
+ <div class="input-group">
+   <div class="input-group-addon"><a href="#/applications/around" ng-click="create_third_part_location()"><i class="fa fa-map"></i></a></div>
+   <select type="text" id="select_addresse" ng-show="user_addresse != undefined" ng-model="annonce.adresse" class="form-control">
+    <option ng-repeat="addresse in user_addresse track by $index" value="{{$index + 1}}">
+       {{addresse.texte}}
+    </option>
+   </select>
+ </div>
+ <div class="form-group">
+ <label for="addresse">Ville ou Code postal numerique</label>
+ <div class="input-group">
+   <div class="input-group-addon"><a href="#/applications/around" ng-click="get_cpn_area()"><i class="fa fa-crosshairs"></i></a></div>
+   <input type="text" class="form-control"  ng-model="annonce.zone" placeholder="Nom de la ville ou code postal numerique">
+ </div>
+ </div>
+
+  <div class="addresse_info">
+    Ajoutez votre adresse pour augmenter la recherche autour de vous.<br/>
+   Si vous ne souhaitez pas renseigner votre adresse exacte, indiquez votre rue sans donner.<br/>
+   Ces informations seront detruites au retraitde votre annonce.
+  </div>
+</div>
+<div class="container_information">
+<h2 class="title_annonce"> Vos informations </h2>
+<div class="form-group">
+  <label for="titre">Pseudo</label>
+  <div class="input-group">
+    <input type="text" class="form-control" ng-model = "user.pseudo" placeholder="Un pseudo">
+  </div>
+  </div>
+  <div class="form-group">
+<label for="titre">Email</label>
+<div class="input-group">
+  <input type="email" class="form-control" ng-model = "user.email" placeholder="email">
+</div>
+</div>
+<div class="form-group">
+<label for="titre">Telephone</label>
+<div class="input-group">
+<input type="text" class="form-control" ng-model = "user.email" placeholder="+237 --- --- ---">
+</div>
+</div>
+<div class="form-group">
+<label for="titre">Password</label>
+<div class="input-group">
+<input type="password" class="form-control" ng-model = "user.password" >
+</div>
+</div>
+<div class="addresse_info">
+<div class="checkbox">
+<label for="type_type">
+  <input type="checkbox" name="type"  ng-model="user.confidence"  value="1" checked>
+       masquer le numero
+ </label>
+</div>
+<div class="checkbox">
+<label for="type_type">
+  <input type="checkbox" name="type"  ng-model="user.confidence"  value="1" checked>
+       Ne pas partager mon numero avec des partenanires.
+ </label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<button class="btn btn-default btn-primary btn-xs" ng-click="sent_depose_annonce()">Deposer</button>
+</div>
+<label style="display:block;font-size:11px; text-align:right;">* indique les champs obligatoires</label>
+</div>
+</form>
+</div>
+  <!-- <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button> -->
+</form>
+</div>
+</div>

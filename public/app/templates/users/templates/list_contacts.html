@@ -1,0 +1,64 @@
+<div>
+  <h2 class="user_title" style="text-align:center"> <div class="rounded" style="border-color:#6093c5"><i  style="color:#6093c5" class="fa fa-address-book-o"></i></div> Gérez et suivez vos contacts</h2>
+  <div class="user_container">
+
+    <div class="container_information">
+    <h2 class="title_annonce" style="text-align:center"> Vos contacts </h2>
+    <div class="col-xs-12">
+      <div class="letters_filter">
+          <div class="letter" ng-class="get_active_class($index)" ng-click="letters_filter($index)" ng-repeat="letter in letters track by $index">
+             {{ letter }} <span class="active_letter" ng-show="active_letter == $index"><i class="fa fa-check"></i></span>
+          </div>
+          <div clas=="clear"></div>
+      </div>
+  </div>
+  <div class="col-xs-12" class="add_contacts" style="margin-top:10px">
+  <div class="col-xs-6">
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="recherche rapide" />
+</div>
+  </div>
+  <div class="col-xs-4">
+  <a href="" ng-click="add_contact()" class="btn btn-default btn-xs btn-primary"><i class="fa fa-plus"></i> contacts </a>
+  </div>
+  <div class="col-xs-2">
+    <div class="">
+      <span class="dbl_icon">
+        <span class="fa_un"><i class="fa fa-map-marker"></i></span>
+        <span class="fa_deux"><i class="fa fa-check"></i></span>
+      </span>
+    </div>
+  </div>
+</div>
+     <div class="card" ng-repeat="card in cards track by $index">
+          <div class="ctn_dbl_icon">
+            <span class="dbl_icon">
+              <span class="fa_un"><i class="fa fa-map-marker"></i></span>
+              <span class="fa_deux">
+                <i ng-show="card.onmap" style="color:#00bb00" class="fa fa-check"></i>
+                <i ng-show="!card.onmap" style="color:#bb0000" class="fa fa-times"></i>
+
+              </span>
+            </span>
+          </div>
+
+        <span><b>name: </b>{{ card.name}}</span><br/>
+        <span><b>email: </b>{{card.email}}</span><br/>
+        <span><b>telphone: </b>{{card.telephone}}</span>
+          <div class="">
+            <a ng-show="!card.onmap" href="" uib-popover="envoyer un mail pour creer son adresse" popover-trigger="mouseenter" popover-placement="bottom" class="btn btn-default btn-xs btn-prmary">
+             envoyer un mail
+            </a>
+            <a ng-show="card.onmap" href="" uib-popover="ajouter a vos adresses suivies" popover-trigger="mouseenter" popover-placement="bottom" class="btn btn-default btn-xs btn-prmary">
+            ajouter dans vos adresses suivies
+            </a>
+            <a ng-click="modifier_contact_name($index)"> modifier</a>
+          </div>
+
+
+     </div>
+     <div class="clear"></div>
+   </div>
+
+  </div>
+</div>

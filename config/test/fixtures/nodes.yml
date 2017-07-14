@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: MyString
+  lng: MyString
+  visible: 1
+  tstamp: 2016-03-12
+  nid: 1
+
+two:
+  lat: MyString
+  lng: MyString
+  visible: 1
+  tstamp: 2016-03-12
+  nid: 1

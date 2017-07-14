@@ -1,0 +1,76 @@
+<div class="select_container" style="z-index:1" ng-init="init_around()">
+  <button type="button" ng-click="open_menu()" uib-popover="Menu" popover-trigger="mouseenter" popover-placement="bottom" class="searchBtn">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <input type="text" class="input_value" width="300px" ng-model="selected" placeholder="selectionner votre zone"
+     uib-typeahead="state for state in sub_regions | filter:$viewValue | limitTo:8 "
+     typeahead-template-url="/app/templates/match.html"
+     typeahead-on-select="onSelect($item, $model, $label)"
+     >
+      <button ng-click = ""   class="searchBtn_2"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <a href="/#/localisations/new"  uib-popover="Addresses" popover-trigger="mouseenter" popover-placement="bottom" class="searchBtn"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+    <a href="#/applications/around" ng-click="open_route()"   uib-popover="Itineraires" popover-trigger="mouseenter" popover-placement="bottom" class="searchBtn"><i class="fa fa-map-signs" aria-hidden="true"></i></a>
+ </div>
+
+
+
+<div class="around-annonce" style="left:0">
+   <div class="col-xs-7" style="height:85px"> <div class="around_annonce_button"><a href="#/applications/around" ng-click="deposer_annonce()"> <i class="fa fa-download"></i> Deposez une annonce</a></div></div>
+   <div class="col-xs-5 around-teasing" style="height:83px"> <b>Around</b>, vous aide à trouver ce dont vous avez besoin pres de  chez vous</div>
+</div>
+<div class="clear"  style="height:calc(100vh - 170px)">
+<div class="col-xs-7" style="padding:0 ; height:100%" >
+  <div class="around-search-bar">
+  <div class="col-xs-5"  style="padding:2px">
+   <input class="form-control"/>
+</div>
+<div class="col-xs-3" style="padding:2px">
+   <ui-select ng-model="around.categorie" ng-disabled="disabled" reset-search-input="false"  title="Choisir une categorie ...">
+       <ui-select-match ng-model="around.categorie" placeholder="categorie...">{{ $select.selected}}</ui-select-match>
+              <ui-select-choices repeat="categorie in categories">
+              <div ng-bind-html="categorie">{{categorie}}</div>
+     </ui-select-choices>
+ </ui-select>
+</div>
+ <div class="col-xs-2" style="padding:2px">
+   <ui-select ng-model="around.distance" ng-disabled="disabled" reset-search-input="false"  title="rayon de ...">
+       <ui-select-match ng-model="around.distance" placeholder="rayon...">{{ $select.selected}}</ui-select-match>
+              <ui-select-choices repeat="distance in distances">
+              <div ng-bind-html="distance">{{distance}}</div>
+     </ui-select-choices>
+ </ui-select>
+
+  </div>
+ <div class="col-xs-1" style="padding:2px">
+    <a class="btn btn-default" style="background-color: inherit;border: none;color: #fff;font-size: 20px;padding: 2px;">
+      <i class="fa fa-search"></i></a>
+ </div>
+ <div class="col-xs-1 around_tools">
+      <a ng-click = "route_set_profil('bus')" uib-popover="demandes" popover-trigger="mouseenter" popover-placement="bottom-left"><i class="fa fa-arrow-circle-o-left"></i></a>
+       <a  ng-click = "route_set_profil('car')" class="active" uib-popover="offres" popover-trigger="mouseenter" popover-placement="bottom-left"><i class="fa fa-arrow-circle-o-right"></i></a>
+   </div>
+ </div>
+ <div class="clear" style="height:calc(100% - 55px)">
+ <div class="col-xs-12 around-suggestion">
+  <div> Suggestions pour <strong>dormir</strong> dans un rayon de 100km de <strong>yaoundé</strong> - 1.000.999 -</div>
+ </div>
+    <div class="main_around_results">
+       <div class="around_results">
+       <div class="" ng-repeat="annonce in annonces track by $index">
+          {{ annonce.categorie}}
+          {{ annonce.titre}}
+          <div ng-click="imsl_init('#annonce_'+$index)" id="annonce_{{$index}}" ng-show="annonce.attaches.length > 0">
+          <div class="nb_annonce_image">{{annonce.attaches.length}}</div>
+          <div ng-repeat="attach in annonce.attaches">
+           <img src="{{attach.url}}" />
+             </div>
+           </div>
+       </div>
+     </div>
+      </div>
+    </div>
+</div>
+<div class="col-xs-5" style="padding:0;right:0;height:100%">
+<leaflet lf-center="center" class="mapContainer" width="100%"></leaflet>
+</div>
+</div>

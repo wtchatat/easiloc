@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>easiloc , Donnez une adresse à votre maison !</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <base target="_parent">
+</head>
+<body ng-app="app-contact">
+
+
+       <div class="logo_iframe"><div class="ctn_logo_iframe"><%= image_tag("easiloc.png" , :width => 200 , :class =>"logo_iframe") %> </div></div>
+
+<%= yield %>
+
+</body>
+</html>

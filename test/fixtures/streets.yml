@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tname: MyString
+  tid: 1
+  ttext: MyText
+  ttype: MyString
+  tparent: MyString
+  points: MyText
+
+two:
+  tname: MyString
+  tid: 1
+  ttext: MyText
+  ttype: MyString
+  tparent: MyString
+  points: MyText

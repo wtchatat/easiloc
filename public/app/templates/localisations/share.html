@@ -1,0 +1,21 @@
+<div class="select_container">
+  <button type="button" ng-click="open_menu()" uib-popover="Menu" popover-trigger="mouseenter" popover-placement="bottom" class="searchBtn">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <input type="text" class="input_value" width="300px" ng-model="selected" placeholder="selectionner votre zone"
+     uib-typeahead="state for state in sub_regions | filter:$viewValue | limitTo:8 "
+     typeahead-template-url="/app/templates/match.html"
+     typeahead-on-select="onSelect($item, $model, $label)"
+     >
+      <button ng-click = ""   class="searchBtn_2"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <a href="/#/localisations/new"  uib-popover="Addresses" popover-trigger="mouseenter" popover-placement="bottom" class="searchBtn"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+    <a href="#" ng-click="open_route()"   uib-popover="Itineraires" popover-trigger="mouseenter" popover-placement="bottom" class="searchBtn"><i class="fa fa-map-signs" aria-hidden="true"></i></a>
+ </div>
+ <div class="modal-body partage_container"ng-init="share_route()">
+   <div class="results recherche" id="routing_results">
+  </div>
+
+ </div>
+ <div class="map_container">
+<leaflet lf-center="center" class="mapContainer"  height="450px" defaults="defaults"  width="100%"></leaflet>
+</div>

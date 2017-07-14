@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+<div class="signin-container">
+<h3 class="login-title">
+S'inscrire
+</h3>
+
+<%= link_to "S'inscrire via Facebook", omniauth_authorize_path(resource_name, "facebook") , {:class =>"btn btn-default btn-primary btn-block"} %>
+<%= link_to "S'inscrire via Google+", omniauth_authorize_path(resource_name, "googleplus") , {:class =>"btn btn-default btn-primary btn-block"} %>
+
+<div class="separation">
+   <div class="line"></div>
+   <div class="text">ou</div>
+</div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+
+    <%= f.email_field :email, autofocus: true , :class => "form-control" , :placeholder =>"email" %>
+  </div>
+
+  <div class="form-group">
+      <%= f.password_field :password, autocomplete: "off" , :class => "form-control" , :placeholder => "Mot de passe"   %>
+    <% if @minimum_password_length %>
+    <em class="forget_password">(<%= @minimum_password_length %> charactères minimum)</em>
+    <% end %>
+
+  </div>
+
+  <div class="form-group">
+
+    <%= f.password_field :password_confirmation, autocomplete: "off" , :class=> "form-control" , :placeholder => "confirmation du mot de passe"  %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :avatar, autocomplete: "off" , :class=> "form-control" , :placeholder => "votre profil"  %>
+    <%= f.hidden_field :avatar_cache  %>
+  </div>
+  <div class="actions">
+    <%= f.submit "S'inscrire" , :class=>"btn btn-default btn-block btn-login" %>
+  </div>
+  <p class="help-block">En vous inscrivant, vous acceptez nos Conditions d'utilisation, notre Politique de confidentialité et notre Politique en matière de cookies.</p>
+<% end %>
+</div>
+</div>
+<div class="col-md-4"></div>
+
+</div>

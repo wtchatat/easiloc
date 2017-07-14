@@ -1,0 +1,67 @@
+<div class="item_localisation">
+
+     <div class="modal-header">
+                <div class="row">
+                <div class="col-xs-10">
+
+                     <div class=""> <span class="modal-titre">Localisation</span> , Lat : {{ current_place.lat}} Lng : {{ current_place.lng}}</div>
+                </div>
+                <div class="col-xs-2 modal-btn-right">
+                   <!--<a class="modal-btn" ng-click="reduire()"> - </a> -->
+                    <!--<a class="modal-btn" ng-click="elargir()"> + </a> -->
+                   <a class="modal-btn" ng-click="fermer()"> x </a>
+                </div>
+                </div>
+             </div>
+             <div class="modal-body">
+
+               <div class="row">
+                  <div class="col-xs-6">
+                       <h3 class="modal-sous-titre"> Precisez votre Localisation </h3>
+                    <form class="form">
+                      <input type="hidden" class="form-control " placeholder="lat" ng-model = "localisation.lat" >
+                      <input type="hidden" class="form-control " placeholder="lng" ng-model = "localisation.lng"  >
+                      <div class="form-group">
+                          <input type="text" class="form-control " placeholder="Nom" ng-model = "localisation.name" required>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Description" ng-model ="localisation.description" required>
+                        </div>
+
+                        <div class="form-group">
+                          <ui-select ng-model="localisation.type"  theme="select2"  ng-disabled="disabled" reset-search-input="false"  title="Choisir type ...">
+                              <ui-select-match ng-model="localisation.type" placeholder="Type...">{{ $select.selected}}</ui-select-match>
+                                     <ui-select-choices repeat="type in types">
+                                     <div ng-bind-html="type">{{type}}</div>
+                            </ui-select-choices>
+                        </ui-select>
+                        </div>
+
+
+                        <div class="form-group">
+                          <ui-select ng-model="localisation.categorie"  theme="select2"  ng-disabled="disabled" reset-search-input="true"  title="Categorie ...">
+                              <ui-select-match ng-model="localisation.categorie" placeholder="Categorie...">{{ $select.selected}}</ui-select-match>
+                                     <ui-select-choices repeat="categorie in categories">
+                                     <div ng-bind-html="categorie">{{categorie}}</div>
+                            </ui-select-choices>
+                        </ui-select>
+
+                        </div>
+
+                          </form>
+                          <div class="localisation-tools">
+                            <a  ng-click="enregistrer()"> enregistrer </a>
+                            <a  ng-click="partager()"> partager </a>
+                            <a  ng-click="annuler()"> annuler </a>
+                          </div>
+                     </div>
+
+
+
+                  <div class="col-xs-6">
+                           <leaflet lf-center="center" height="250px" width="100%"></leaflet>
+                  </div>
+                   </div>
+
+               </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <h2 class="user_title" style="text-align:center"> <div class="rounded"><i class="fa fa-code"></i></div> Creer & gérer un compte pour vos applications</h2>
+  <div class="user_container">
+    <div class="container_information">
+    <h2 class="title_annonce" style="text-align:center"> Consulter et Managager une application  </h2>
+    <div class="row">
+      <div class="col-xs-6">
+  <div class="settings_annonce">
+  <div class="">Analysez prochainement vos données issues de votre application</div>
+</div>
+    <canvas id="line" class="chart chart-line" chart-data="data"
+ chart-labels="labels" chart-series="series" chart-options="options"
+ chart-dataset-override="datasetOverride" chart-click="onClick">
+ </canvas>
+  </div>
+    <div class="col-xs-6">
+      <div ng-show = "!ismodifiable" class="slide-animate" style="margin-top:30px" ng-include="view_app()"></div>
+      <div ng-show = "ismodifiable" class="slide-animate" style="margin-top:30px" ng-include="form_app()"></div>
+    </div>
+  </div>
+</div>
+</div>

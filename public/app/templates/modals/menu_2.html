@@ -1,0 +1,29 @@
+<div class="navtools">
+    <h4 class="menu_title"> MENU <button ng-click="close_menu()" class="pull-right"><i class="fa fa-close"></i> </button></h4>
+    <uib-accordion close-others=true>
+       <uib-accordion-group heading="localisations"  is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled" >
+         <ul id="localisation-panel">
+              <li><a href="/#/localisations/new"><i class="fa fa-map-marker"></i>Gerer les addresses</a></li>
+              <li><a href="/#/localisations/favoris"><i class="fa fa-map-pin"></i>Mes addresses préférées</a></li>
+             <li><a href="/#/localisations/residence?d=domicile"><i class="fa fa-home"></i>Mes domiciles</a></li>
+             <li><a href="/#/localisations/residence?d=bureau"><i class="fa fa-briefcase"></i>Mes residences</a></li>
+         </ul>
+    </uib-accordion-group>
+    <uib-accordion-group heading="routes">
+      <ul id="routePanel">
+          <li><a href="#/routes/recherche">Recherche un itineraire</a></li>
+
+          <li><a href="#" ng-click="open_favorite_route()" >Favoris (
+            <i style="padding:0" ng-if="favorite_routes == -1" class="fa fa-spinner fa-spin"></i>
+            <span  ng-if="favorite_routes != -1">{{favorite_routes.length}}</span>
+            )
+          </a></li>
+      </ul>
+   </uib-accordion-group>
+   <uib-accordion-group heading="Applications" >
+       <ul  id="appPanel">
+            <li><a href="#/applications">Pres de vous</a></li>
+         </ul>
+     </uib-accordion-group>
+   </uib-accordion>
+</div>
