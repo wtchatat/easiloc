@@ -6,8 +6,8 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server 'easiloc.com' , user:"lajacobe" , roles: %w{app db web}, ssh_options: {forward_agent:true}
 
+server '51.255.166.204', user: 'easiloc', roles: %w{app db web}
 
 # role-based syntax
 # ==================
@@ -20,6 +20,7 @@ server 'easiloc.com' , user:"lajacobe" , roles: %w{app db web}, ssh_options: {fo
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
+
 
 
 

@@ -2,33 +2,16 @@
 lock "3.8.2"
 
 set :application, "easiloc"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "https://github.com/wtchatat/easiloc.git"
 
-# Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-# Default deploy_to directory is /var/www/my_app_name
- set :deploy_to, "/home/lajacobe/easiloc"
 
-# Default value for :format is :airbrussh.
-# set :format, :airbrussh
+set :deploy_to, '/home/easiloc/easiloc'
 
-# You can configure the Airbrussh format using :format_options.
-# These are the defaults.
-# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
-
-# Default value for :pty is false
-# set :pty, true
-
-# Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-# Default value for linked_dirs is []
- append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
- set :nginx_config_name, 'easiloc'
- set :nginx_server_name, 'easiloc.com'
- set :puma_workers, 2
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 

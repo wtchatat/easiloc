@@ -1,5 +1,6 @@
+if( OpenSSL::SSL::VERIFY_PEER != OpenSSL::SSL::VERIFY_NONE)
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-
+end
 # # Rails.application.config.middleware.use OmniAuth::Builder do
 # # 	provider :googleplus, "consumer_key", "consumer_secret"
 # # end
