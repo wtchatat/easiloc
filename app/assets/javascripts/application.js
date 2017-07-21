@@ -10,6 +10,8 @@
 //= require angular-clipboard.js
 //= require videogular.js
 //= require vg-controler.js
+//= require vg-poster.js
+//= require vg-overplay.js
 //= require ng-upload-file
 //= require util_leaflet
 //= require leaflet-routing-machine

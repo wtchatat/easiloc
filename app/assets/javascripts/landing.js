@@ -4,6 +4,8 @@ angular.module('landing',
             "ngSanitize",
             "com.2fdevs.videogular",
             "com.2fdevs.videogular.plugins.controls",
+            "com.2fdevs.videogular.plugins.overlayplay",
+            "com.2fdevs.videogular.plugins.poster",
             "restangular",
             "ui.bootstrap",
             "720kb.socialshare"
@@ -11,10 +13,11 @@ angular.module('landing',
     )
     .controller('HomeCtrl',
         ["$sce", function ($sce) {
+
             this.config = {
                 preload: "none",
                 sources: [
-                    {src: $sce.trustAsResourceUrl("http://localhost:3000/assets/videos/explainer.mp4"), type: "video/mp4"},
+                    {src: $sce.trustAsResourceUrl("/assets/explainer.mp4"), type: "video/mp4"},
                       ],
                       tracks: [
                           {
@@ -31,7 +34,8 @@ angular.module('landing',
                 plugins: {
                     controls: {
                         autoHide: true
-                    }
+                    },
+                     poster: "/assets/vg_poster_easiloc.png"
                 }
             };
         }]
@@ -46,7 +50,17 @@ angular.module('landing',
 
               return name;
             }
-    }])
+    }])  .controller('vipCtrl',
+            ["$scope" ,"$rootScope", function ($scope,$rootScope) {
+        $scope.nombre = 0
+        $scope.nb_objectif = 500
+        $scope.pourcentage = Math.floor(($scope.nombre / $scope.nb_objectif)*100)
+         $rootScope.$on("ealo-vip-register",function(event,value){
+           $scope.nombre = value.nombre ;
+           $scope.nb_objectif = 500
+           $scope.pourcentage = Math.floor(($scope.nombre / $scope.nb_objectif)*100)
+         })
+      }])
     .directive("myStopButton",
         function() {
             return {
@@ -61,10 +75,10 @@ angular.module('landing',
         }
     ).directive('ealoSubscription', [function() {
 
-      var controller = ['$scope','Restangular','$uibModal', function ($scope,Restangular,$uibModal) {
+      var controller = ['$scope','Restangular','$uibModal','$rootScope', function ($scope,Restangular,$uibModal,$rootScope) {
                //var self = this ;
                $scope.register = function(){
-                  console.log($scope.invite)
+
                  Restangular.all('/locations/landing.json').post({
                  invite:$scope.invite
                  }).then(function(value){
@@ -73,7 +87,8 @@ angular.module('landing',
                }
                $scope.register_response = function(value){
                  if(value){
-                   console.log(value)
+
+                  $rootScope.$emit("ealo-vip-register", value) ;
                    $scope.message = {
                      title :"Merci!",
                      message: " vous serez parmi les tout premiers utilisateurs de easiloc. Nous vous remercions de votre confiance"
