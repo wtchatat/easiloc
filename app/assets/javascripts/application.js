@@ -18,3 +18,4 @@
 //= require ./select/select.js
 //= require ./leaflet/angular-leaflet-directive.min
 //= require contextmenu
+//= require main
