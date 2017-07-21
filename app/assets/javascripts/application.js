@@ -35,3 +35,4 @@
 //= require_tree ./angular/controllers
 //= require angular/app
 //= require angular/app_contact
+//= require landing
