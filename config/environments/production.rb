@@ -33,6 +33,13 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+
+   # mail send
+   config.action_mailer.delivery_method = :sendmail
+   config.action_mailer.perform_deliveries = true
+   config.action_mailer.raise_delivery_errors = true
+
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
