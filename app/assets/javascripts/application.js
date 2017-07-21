@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require aes
 //= require chart
 //= require angular
 //= require angular-chart
