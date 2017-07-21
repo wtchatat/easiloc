@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.1.8'
 group :development do
      gem 'mysql2', '~> 0.3.18'
+     gem 'capistrano-local-precompile', '~> 1.0.0', require: false
 end
 group :production do
      gem 'pg'
@@ -34,7 +35,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "bower-rails", "~> 0.10.0"
 gem 'sprockets', '2.12.3'
 gem 'carrierwave'
-gem 'nokogiri'
+gem 'nokogiri' , '1.6.8'
 gem 'activerecord-import' , '>= 0.4.0'
 gem 'thin'
 gem "koala", "~> 2.2"
