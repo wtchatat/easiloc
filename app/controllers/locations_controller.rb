@@ -49,7 +49,7 @@ def landing
     @invite.save
   end
   # send mail
-  # Partage.landing_invite(@invite,@existed).deliver
+ Partage.landing_invite(@invite,@existed).deliver
  @count = Invite.all.size
 end
 
