@@ -39,12 +39,13 @@ def place_search
 end
 
 def landing
+    @existed = false
   invite_params= params[:invite]
-  @invite = Invite.where(:email => invite_params[:email])
-  if @invite
+  @invite = Invite.where(:email => invite_params[:email]).first
+unless @invite.nil?
     @existed = true
   end
-  if @existed
+  unless @existed
     @invite = Invite.new(:name => invite_params[:name] , :email => invite_params[:email])
     @invite.save
   end
@@ -53,6 +54,9 @@ def landing
  @count = Invite.all.size
 end
 
+def count_invite
+  @count = Invite.all.size
+end
 
 def  getadmin
   cities = City.all

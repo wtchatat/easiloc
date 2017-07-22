@@ -5,7 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-
+  <meta property="og:url"                content="http://easiloc.com" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="Donnez une adresse à votre maison" />
+  <meta property="og:description"        content="easiloc, souhaite fournir à toutes les maisons du Cameroun une adresse immaterielle afin de faciliter leurs localisations" />
+  <meta property="og:image"              content="<%= image_url("easiloc.png" , :width => 100 ) %>" />
 </head>
 <body ng-app="landing">
   <div class="row nHeader container-fluid">
@@ -89,10 +93,10 @@
  <div class="container">
 
     <ul class="ld_nav">
-      <li> Blog</li>
-     <li><i class="fa fa-facebook-official" aria-hidden="true"></i> </li>
-     <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
-      <li> Contacts</li>
+      <li><a href="https://easiloc.blogspot.com" target="_blank"> Blog</a></li>
+     <li><a href="https://facebook.com/easiloc" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+     <li><a href="https://twitter.com/easiloc" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li><a href="https://easiloc.blogspot.com/p/blog-page.html" target="_blank"> Contacts</a></li>
     </ul>
  </div>
 </div>

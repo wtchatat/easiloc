@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
 
   get 'locations/search' => "locations#place_search"
+  get 'locations/count_invite' => "locations#count_invite"
   post 'locations/landing' => "locations#landing"
   post 'locations/search' => "locations#search"
   post 'locations/set_user_favorite_route' => "locations#set_user_favorite_route"
@@ -121,4 +122,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '*path' => redirect('/')
 end

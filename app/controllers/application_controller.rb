@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
 #  bloque cette ce filter on utilise pas la confirmation par mail
 #  before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
-before_filter :configure_permitted_parameters, if: :devise_controller?
+before_filter :require_secret
+#before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
   #help dividing place in zone
@@ -56,5 +57,12 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
           redirect_to signed_in_root_path(current_user)
        end
    end
+
+
+
+   def require_secret
+     return if action_name == "landing"
+      redirect_to("/") and return unless params[:secret] == '78hor0924wi84'
+ end
 
 end

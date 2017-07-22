@@ -1,0 +1,23 @@
+<div class="message_wait">{{message}}</div>
+<div class="progress-wrapper">
+            <div class="progress ng-cloak" ng-style="getStyle()">{{ restCurrent || max }}</div>
+            <round-progress
+                max="max"
+                current="current"
+                color="{{ getColor() }}"
+                bgcolor="{{ bgColor }}"
+                radius="{{ radius }}"
+                semi="isSemi"
+                rounded="rounded"
+                stroke="{{ stroke }}"
+                clockwise="clockwise"
+                responsive="responsive"
+                duration="{{ duration }}"
+                animation="{{ currentAnimation }}"
+                offset="{{ offset }}"
+                animation-delay="{{ animationDelay }}"
+                on-render="showRestCurrent">
+
+
+            </round-progress>
+</div>
