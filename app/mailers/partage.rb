@@ -1,5 +1,5 @@
 class Partage < ActionMailer::Base
-  default from: "info@forumeee.com"
+  default from: "easiloc@easiloc.com"
   layout 'mailer'
 
   def partage_route(user,guest)
@@ -16,7 +16,7 @@ class Partage < ActionMailer::Base
   def landing_invite(user,existed)
     @invite = user
     @existed = existed
-    mail(:to => @invite.email, :subject => "easiloc ,vip utilisateur")
+    mail(:to => @invite.email, :subject => "easiloc , vip utilisateur")
   end
 
 
