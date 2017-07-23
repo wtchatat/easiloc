@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://ogp.me/ns#">
 <head>
   <title>easiloc , Donnez une adresse à votre maison !</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,7 +9,9 @@
   <meta property="og:type"               content="website" />
   <meta property="og:title"              content="Donnez une adresse à votre maison" />
   <meta property="og:description"        content="easiloc, souhaite fournir à toutes les maisons du Cameroun une adresse immaterielle afin de faciliter leurs localisations" />
-  <meta property="og:image"              content="<%= image_url("easiloc.png" , :width => 100 ) %>" />
+  <meta property="og:image"              content="<%= image_url('easiloc_orange.png' , :width => 100 ) %>" />
+  <meta property="og:fb:app_id"           content="1096051820539877" />
+
 </head>
 <body ng-app="landing">
   <div class="row nHeader container-fluid">
