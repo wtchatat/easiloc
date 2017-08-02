@@ -6,7 +6,7 @@ set :repo_url, "https://github.com/wtchatat/easiloc.git"
 
 
 
-set :deploy_to, '/home/easiloc/easiloc'
+set :deploy_to, '/home/deploy/easiloc'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"

@@ -33,13 +33,13 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   config.action_mailer.default_url_options = { :host => '127.0.0.1:3000' }
  config.action_mailer.smtp_settings = {
-   address:              'mail.forumeee.com',
-  port:                 26,
-   domain:               'forumeee.com',
-   user_name:            'info@forumeee.com',
-   password:             'promote',
-   authentication:       :plain,
-   enable_starttls_auto: false  }
+   address:              'easiloc.com',
+  port:                 587,
+   tls:               false,
+   user_name:            'brian@easiloc.com',
+   password:             'bri123',
+   authentication:       :login,
+   enable_starttls_auto: true  }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
