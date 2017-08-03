@@ -60,8 +60,11 @@ angular.module('landing',
               Restangular.one('/locations/count_invite.json?secret=78hor0924wi84').get().then(function(value){
                 $scope.nombre = value.nombre
                 $scope.nb_objectif = 500
-                $scope.pourcentage = Math.floor(($scope.nombre / $scope.nb_objectif)*100)
 
+                $scope.pourcentage = Math.floor(($scope.nombre / $scope.nb_objectif)*100)
+                if(  $scope.pourcentage > 100){
+                  $scope.pourcentage = 100
+                }
               },function(error){console.log(error)})
 
          $rootScope.$on("ealo-vip-register",function(event,value){
@@ -140,6 +143,7 @@ angular.module('landing',
     .directive('ealoRoundProgress', [function() {
 
       var controller = ['$scope', '$interval', '$timeout', '$window', 'roundProgressService', '$rootScope',function($scope, $interval, $timeout, $window, roundProgressService,$rootScope){
+     $scope.restCurrent = 0 ;
     $scope.message = "Attendez un peu ..."
      $scope.current =       10;
      $scope.max =            10;
@@ -207,6 +211,7 @@ angular.module('landing',
                  $rootScope.$emit("ealo-progress-finish",amount)
              }else{
                  var math = $window.Math;
+                 console.log(amount)
                  $scope.restCurrent = math.round($scope.max) - math.round(amount) ;
              }
          });

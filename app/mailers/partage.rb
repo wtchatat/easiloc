@@ -1,5 +1,5 @@
 class Partage < ActionMailer::Base
-  default from: "easiloc@easiloc.com"
+  default from: "Easiloc.com <easiloc@easiloc.com>"
   layout 'mailer'
 
   def partage_route(user,guest)

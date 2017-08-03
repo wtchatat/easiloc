@@ -3,8 +3,17 @@
 <head>
   <title>easiloc , Donnez une adresse à votre maison !</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <!--Start of Zendesk Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){
+z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='https://v2.zopim.com/?nBThDXUaHO3QkCbVMsjOs429urNKT3kC';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zendesk Chat Script-->
   <script src="https://apis.google.com/js/client.js"></script>
-  <%= javascript_include_tag 'application' %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -74,5 +83,6 @@
   setTimeout("$('.notice').fadeOut('slow')", 5000)
   setTimeout("$('.alert').fadeOut('slow')", 5000)
 </script>
+<%= javascript_include_tag 'application' %>
 </body>
 </html>
