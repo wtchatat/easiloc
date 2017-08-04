@@ -289,7 +289,8 @@ html{
 }
 body{
   background-color:#f1f2f3;
-  height:100%
+  height:100%;
+  min-width:320px
 }
 #map{
   height:550px
@@ -2251,7 +2252,7 @@ span{
 
 /*  Landing page */
 .ld_bg{
-  height:500px;
+  min-height:500px;
   width:100%;
   background-image: url("/assets/plan.png");
 }
@@ -2262,20 +2263,23 @@ span{
   padding-bottom:30px;
   color:#fff;
   font-size:38px ;
-  line-height: 48px;
+  line-height: 38px;
   font-weight:900;
   font-family:'Raleway' , 'sans-serif';
   .ld_slogan_small{
     font-size:18px;
     text-transform: none;
     font-weight:500;
-    margin-bottom:-23px;
+    margin-bottom:-10px;
   }
 }
 .ld_content{
   background-color:rgba(40,88,188,0.8) ;//#186193;
-  height:500px;
-  width:100%
+  min-height:500px;
+  width:100%;
+  .col-md-6{
+    margin-top:20px;
+  }
 }
 .ld_lancement{
   text-align:center;
@@ -2300,7 +2304,9 @@ span{
 .ld_form{
   width: 350px;
 margin: 20px auto;
-
+ .form-group{
+   display:inline-block
+ }
 }
 .ld_card{
 width: 350px;

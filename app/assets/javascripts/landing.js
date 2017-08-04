@@ -101,6 +101,7 @@ angular.module('landing',
                  Restangular.all('/locations/landing.json?secret=78hor0924wi84').post({
                  invite:$scope.invite
                  }).then(function(value){
+                  
                     $rootScope.$on("ealo-progress-finish",function(){
                       $scope.info_souscription_modal.close() ;
                       $scope.register_response(value)
@@ -205,6 +206,7 @@ angular.module('landing',
          });
      };
      $scope.showRestCurrent = function(amount){
+
          $timeout(function(){
              if(amount >= $scope.max){
                  //$scope.restCurrent = $scope.max;

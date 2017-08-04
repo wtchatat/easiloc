@@ -26,10 +26,10 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 <body ng-app="landing">
   <div class="row nHeader container-fluid">
     <div class="container">
-  <div class="nCol col-md-2">
+  <div class="nCol col-xs-2 col-md-2">
      <div class="logo"><%= image_tag("easiloc.png" , :width => 100 ) %> </div>
   </div>
-  <div class="nCol col-md-10">
+  <div class="nCol col-xs-2 col-md-10">
   </div>
 </div>
 </div>
@@ -40,11 +40,11 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 <div class="container">
 <div class="ld_slogan">
      <div class="ld_slogan_small">Rejoignez-nous</div>
-     <div class="ld_slogan_big"> Donnez une adresse à votre maison.</div>
+     <div class="ld_slogan_big"> Donnez une adresse à votre maison</div>
  </div>
 </div>
 <div class="container">
-  <div class="col-xs-6">
+  <div class="col-md-6">
     <div class="ld_content_video">
       <!-- DEBU VIDEO -->
       <div ng-controller="HomeCtrl as controller" class="videogular-container">
@@ -65,7 +65,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
        </vg-volume>
        <vg-fullscreen-button></vg-fullscreen-button>
        <my-stop-button></my-stop-button>
- <div class='my-button iconButton'><a href='http://easilo.com' target='_blank'><%= image_tag("videogular_easiloc.png" , :width => 20 ) %></a></div>
+ <div class='my-button iconButton'><a href='http://easiloc.com' target='_blank'><%= image_tag("videogular_easiloc.png" , :width => 20 ) %></a></div>
    </vg-controls>
    <vg-overlay-play></vg-overlay-play>
    <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
@@ -74,7 +74,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 <!-- FIN VIDEO -->
     </div>
   </div>
-  <div class="col-xs-6" ng-controller="vipCtrl">
+  <div class="col-md-6" ng-controller="vipCtrl">
     <p class="ld_lancement"> Nous lançons la bêta privée le 1<sup style="font-size:12px">er</sup> Septembre 2017</p>
      <p class="ld_message"> <b>easiloc</b> est une application qui vous permet de créer une adresse pour votre maison et de la partager avec vos connaisances.
       envoyez votre nom et email, pour être parmi les 500 premiers à utiliser la bêta privée.</p>
@@ -98,6 +98,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
     </div>
   </div>
 </div>
+<div class="clearer"></div>
 </div>
 </div>
 <!--  FOOTER -->
