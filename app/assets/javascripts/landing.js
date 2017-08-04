@@ -6,6 +6,7 @@ angular.module('landing',
             "com.2fdevs.videogular.plugins.controls",
             "com.2fdevs.videogular.plugins.overlayplay",
             "com.2fdevs.videogular.plugins.poster",
+             "com.2fdevs.videogular.plugins.buffering",
             "restangular",
             "ui.bootstrap",
             "720kb.socialshare",
@@ -101,7 +102,7 @@ angular.module('landing',
                  Restangular.all('/locations/landing.json?secret=78hor0924wi84').post({
                  invite:$scope.invite
                  }).then(function(value){
-                  
+
                     $rootScope.$on("ealo-progress-finish",function(){
                       $scope.info_souscription_modal.close() ;
                       $scope.register_response(value)

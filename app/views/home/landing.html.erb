@@ -50,7 +50,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
       <div ng-controller="HomeCtrl as controller" class="videogular-container">
 <videogular vg-theme="controller.config.theme.url">
    <vg-media vg-src="controller.config.sources"
-             vg-tracks="controller.config.tracks" vg-preload="controller.config.preload">
+             vg-tracks="controller.config.tracks" vg-dash vg-preload="controller.config.preload">
    </vg-media>
 
    <vg-controls vg-autohide="controller.config.plugins.controls.autoHide" vg-autohide-time="controller.config.plugins.controls.autoHideTime">
@@ -69,6 +69,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
    </vg-controls>
    <vg-overlay-play></vg-overlay-play>
    <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
+   <vg-buffering></vg-buffering>
 </videogular>
 </div>
 <!-- FIN VIDEO -->
