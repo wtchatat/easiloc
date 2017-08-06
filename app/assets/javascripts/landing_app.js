@@ -1,0 +1,15 @@
+//= require jquery
+//= require jquery_ujs
+//= require angular
+//= require videogular.js
+//= require vg-controler.js
+//= require vg-poster.js
+//= require vg-overplay.js
+//= require svg_progressbar.js
+//= require vg-buffering.js
+//= require restangular
+//= require ./select/sanitize.js
+//= require lodash
+//= require angular-bootstrap
+//= require socialshare
+//= require landing
