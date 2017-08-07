@@ -214,7 +214,7 @@ angular.module('landing',
                  $rootScope.$emit("ealo-progress-finish",amount)
              }else{
                  var math = $window.Math;
-                 console.log(amount)
+              
                  $scope.restCurrent = math.round($scope.max) - math.round(amount) ;
              }
          });
