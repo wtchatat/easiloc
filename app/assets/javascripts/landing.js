@@ -2,45 +2,11 @@
 angular.module('landing',
         [
             "ngSanitize",
-            "com.2fdevs.videogular",
-            "com.2fdevs.videogular.plugins.controls",
-            "com.2fdevs.videogular.plugins.overlayplay",
-            "com.2fdevs.videogular.plugins.poster",
-             "com.2fdevs.videogular.plugins.buffering",
             "restangular",
             "ui.bootstrap",
             "720kb.socialshare",
             "angular-svg-round-progressbar"
         ]
-    )
-    .controller('HomeCtrl',
-        ["$sce", function ($sce) {
-
-            this.config = {
-                preload: "none",
-                sources: [
-                    {src: $sce.trustAsResourceUrl("/assets/explainer.mp4"), type: "video/mp4"},
-                      ],
-                      tracks: [
-                          {
-                              src: "http://www.videogular.com/assets/subs/pale-blue-dot.vtt",
-                              kind: "subtitles",
-                              srclang: "en",
-                              label: "English",
-                              default: ""
-                          }
-                      ],
-                      theme: {
-                          url: "https://unpkg.com/videogular@2.1.2/dist/themes/default/videogular.css"
-                      },
-                plugins: {
-                    controls: {
-                        autoHide: true
-                    },
-                     poster: "/assets/vg_poster_easiloc.png"
-                }
-            };
-        }]
     )
     .controller('InviteCtrl',
           ["$scope", function ($scope) {
@@ -214,7 +180,7 @@ angular.module('landing',
                  $rootScope.$emit("ealo-progress-finish",amount)
              }else{
                  var math = $window.Math;
-              
+
                  $scope.restCurrent = math.round($scope.max) - math.round(amount) ;
              }
          });
